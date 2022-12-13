@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/EliasAllan/pet-adoption-website#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
+    "mysql2": "^2.3.3",
     "sequelize": "^6.27.0"
   }
 }
