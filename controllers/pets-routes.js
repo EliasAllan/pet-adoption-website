@@ -4,7 +4,7 @@ const path = require('path');
 
 // Get homepage 
 router.get('/', async (req, res) => {
-    console.log(req)
+    // console.log(req)
     // console.log(res)
     res.render('index');
   });
