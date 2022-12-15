@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const {Animal, Category} = require('../models');
+const { Animal, Category } = require('../models');
 
 const categoryData = require('./categoryData.json');
 const animalData = require('./animalData.json');
