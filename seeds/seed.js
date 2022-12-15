@@ -1,6 +1,5 @@
 const sequelize = require('../config/connection');
-const Animal = require('../models/Animal');
-const Category = require('../models/Category');
+const { Animal, Category } = require('../models');
 
 const categoryData = require('./categoryData.json');
 const animalData = require('./animalData.json');
@@ -13,7 +12,8 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    const animal = await Animal.buldCreate(animalData, {
+
+    const animal = await Animal.bulkCreate(animalData, {
         individualHooks: true,
         returning: true,
     });
