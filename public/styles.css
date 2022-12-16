@@ -28,6 +28,10 @@
     color: black;
 }
 
+.horizontal-nav-bar a:hover{
+    color: purple;
+    }
+
 .horizontal-nav-bar-second-row a{
     color: black;
     font-size: 24px;
