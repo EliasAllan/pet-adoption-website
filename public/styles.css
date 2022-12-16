@@ -1,5 +1,8 @@
 /*Start with HTML semantic tags*/
-
+*{
+    margin:0;
+    padding:0;
+}
 /*Id*/
 
 
@@ -115,8 +118,27 @@ max-width: 400px;
 }
 
  @media only screen and (max-width: 600px) {
-   .animals img {
+   .animals img, .circles img {
     width: 100%;
     height: auto;
+    
    } 
   }
+
+  /*
+  /* Cards are split into two columns at 992px or smaller 
+@media screen and (max-width: 992px) {
+    .card {
+      width: 50%;
+    }  
+  }
+  
+  /* Cards are stacked on top of each other at 768px or smaller 
+  @media screen and (max-width: 768px) {
+    header, main {
+      flex-direction: column;
+    }
+    .card {
+      width: 100%;
+    }
+  }*/
