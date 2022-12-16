@@ -2,11 +2,76 @@
 
 
 /*Id*/
-#Sign-Up-Title {
-color: purple;
-}
+
+
 
 /*Classes*/
+/* Horizontal Navigation Bar */
+.horizontal-nav-bar{
+    padding-top: 15px;
+    margin-right: 20px;
+    float: right;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    list-style-type: none;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.horizontal-nav-bar li{
+    display: inline-block;
+    margin-left: 25px;
+    color: purple;
+}
+
+.horizontal-nav-bar a{
+    color: black;
+}
+
+.horizontal-nav-bar-second-row a{
+    color: black;
+    font-size: 24px;
+}
+
+#nav-logo {
+    display: inline-block;
+    padding: 5px;
+    width: 150px;
+}
+
+/*Sign Up*/
+/*Login*/
+#Sign-Up-Title, #Login-Title {
+    color: purple;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.Sign-Up-Redirect {
+    color: purple;
+    margin-top: 24px;
+    text-align: center;
+}
+.Sign-Up-Redirect a{
+    color: black;
+    text-align: center;
+}
+
+.SignUp-Button ,
+.Sign-Button {
+    background-color: purple;
+    color: white;
+    margin-top: 24px;
+    padding-top: 12px;
+}
+
+.SignUp-Button:hover{
+background-color: light purple;
+color: black;
+}
+
+
 
 
 /*Responsive*/
