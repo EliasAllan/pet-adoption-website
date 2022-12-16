@@ -40,18 +40,38 @@
 }
 
 /*Sign Up*/
-#Sign-Up-Title {
+/*Login*/
+#Sign-Up-Title, #Login-Title {
     color: purple;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
-.SignUp-Button {
+.Sign-Up-Redirect {
+    color: purple;
+    margin-top: 24px;
+    text-align: center;
+}
+.Sign-Up-Redirect a{
+    color: black;
+    text-align: center;
+}
+
+.SignUp-Button ,
+.Sign-Button {
     background-color: purple;
     color: white;
+    margin-top: 24px;
+    padding-top: 12px;
 }
 
 .SignUp-Button:hover{
 background-color: light purple;
 color: black;
 }
+
+
+
 
 /*Responsive*/
