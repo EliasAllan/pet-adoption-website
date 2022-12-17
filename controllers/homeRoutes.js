@@ -1,36 +1,35 @@
-//const { Module , DataTypes } = require("sequelize");
-const router = require('express').Router();
-const path = require('path');
+const { Model, DataTypes } = require("sequelize");
+const router = require("express").Router();
+const path = require("path");
+const { Animal, Category } = require("../models");
 
+// Get homepage
+router.get("/", async (req, res) => {
+  // console.log(req)
+  // console.log(res)
+  let animals = await Animal.findAll();
+  console.log(animals);
+  res.render("homepage", { animals: animals });
+});
 
-// Get homepage 
-router.get('/', async (req, res) => {
-    // console.log(req)
-    // console.log(res)
-    res.render('homepage');
-  });
+router.get("/login", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
+  }
 
+  res.render("login");
+});
 
-  router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('login');
-  });
+router.get("/signup", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
+  }
 
-  router.get('/signup', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('signup');
-  });
+  res.render("signup");
+});
 
-
-
-  module.exports = router;
+module.exports = router;
