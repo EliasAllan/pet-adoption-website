@@ -6,69 +6,15 @@
         "category_id": 1
     },
     {
-        "name": "Nebraska",
-        "breed": "British Shorthair",
-        "age": 1,
-        "category_id": 1
-    },
-    {
-        "name": "Patasha",
-        "breed": "Birman",
-        "age": 2,
-        "category_id": 1
-    },
-    {
-        "name": "Whiskers",
-        "breed": "Tuxedo Cat",
-        "age": 1,
-        "category_id": 1
-    },
-    {
         "name": "Cookie",
         "breed": "German Shepherd",
         "age": 4,
         "category_id": 2
     },
     {
-        "name": "Puddles",
-        "breed": "Australian Cattle Dog",
-        "age": 5,
-        "category_id": 2
-    },
-    {
-        "name": "Taco",
-        "breed": "Chihuahua",
-        "age": 2,
-        "category_id": 2
-    },
-    {
-        "name": "Arkansas",
-        "breed": "Pembroke Welsh",
-        "age": 3,
-        "category_id": 2
-    },
-    {
         "name": "Tank",
         "breed": "Galapago Tortoise",
         "age": 5,
-        "category_id": 3
-    },
-    {
-        "name": "Shelby",
-        "breed": "Leatherback",
-        "age": 4,
-        "category_id": 3
-    },
-    {
-        "name": "Europa",
-        "breed": "European pond turtle",
-        "age": 2,
-        "category_id": 3
-    },
-    {
-        "name": "Rocky",
-        "breed": "Box turtle",
-        "age": 1,
         "category_id": 3
     }
 ]
