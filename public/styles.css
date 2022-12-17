@@ -17,7 +17,7 @@
 
 .circles  {
 
-    margin-top: -3%;
+    margin-top: -2%;
 }
 
 .boxes img {
@@ -68,7 +68,7 @@
 
 /*Sign Up*/
 /*Login*/
-#Sign-Up-Title, #Login-Title {
+#Sign-Up-Title, #Login-Title, #homePage-Subtitle{
     color: purple;
     text-align: center;
     padding-top: 24px;
@@ -102,27 +102,17 @@ color: black;
 
 
 /*Responsive*/
-.small-box{
-max-width: 400px;
-}
 
-.dark-box{
-    background-color:blue;
-    color:aquamarine;
-}
-
-.square-box{
-    max-width: 600px;
-    min-height: 600px;
-    border: 1px solid black;
-}
 
  @media only screen and (max-width: 600px) {
-   .animals img, .circles img {
+   .animals img, .circles img, .banner img {
     width: 100%;
-    height: auto;
-    
+    height: auto; 
    } 
+   .mainNavBar, .bottomNavBar{
+    width: 100%;
+    height: auto; 
+   }
   }
 
   /*
