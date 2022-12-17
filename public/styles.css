@@ -1,11 +1,34 @@
 /*Start with HTML semantic tags*/
-
-
+*{
+    margin:0;
+    padding:0;
+}
 /*Id*/
 
 
 
 /*Classes*/
+
+.circles img {
+
+    margin-right: 10%;
+
+}
+
+.circles  {
+
+    margin-top: -3%;
+}
+
+.boxes img {
+
+    margin-right: 10%;
+}
+
+.boxes {
+
+    margin-bottom:10%;
+}
 /* Horizontal Navigation Bar */
 .horizontal-nav-bar{
     padding-top: 15px;
@@ -94,3 +117,28 @@ max-width: 400px;
     border: 1px solid black;
 }
 
+ @media only screen and (max-width: 600px) {
+   .animals img, .circles img {
+    width: 100%;
+    height: auto;
+    
+   } 
+  }
+
+  /*
+  /* Cards are split into two columns at 992px or smaller 
+@media screen and (max-width: 992px) {
+    .card {
+      width: 50%;
+    }  
+  }
+  
+  /* Cards are stacked on top of each other at 768px or smaller 
+  @media screen and (max-width: 768px) {
+    header, main {
+      flex-direction: column;
+    }
+    .card {
+      width: 100%;
+    }
+  }*/
