@@ -16,14 +16,16 @@ Cart.init(
             allowNull: false,
         },
         animal_id: {
+            type: DataTypes.INTEGER,
             references: {
                 model: 'animal',
                 key: 'id',
             }
         },
-        customer_id: {
+        user_id: {
+            type: DataTypes.INTEGER,
             references: {
-                model: 'customer',
+                model: 'user',
                 key: 'id'
             }
         }

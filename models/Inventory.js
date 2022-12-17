@@ -1,3 +1,7 @@
+//  Unclear if we'll need an inventory since we're working with 
+//each pet individually rather than having an inventory of
+//multiple pets of the same kind
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
