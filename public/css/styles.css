@@ -96,7 +96,7 @@ color: black;
 
 
 /*Media Queries*/
- @media screen and (max-width: 600px) {
+ @media only screen and (max-width: 900px) {
    .animals img, .circles img, .circles, .banner img {
     width: 100%;
     height: auto; 
