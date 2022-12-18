@@ -104,6 +104,7 @@ color: black;
    } 
    .mainNavBar, .bottomNavBar{
     flex-direction: column;
+    justify-content: center;
    }
   }
 
