@@ -1,22 +1,19 @@
+const { Model, DataTypes } = require("sequelize");
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
+// create user by adding a record in user table
 router.post('/signup', async (req, res) => {
     try {
-      const userData = await User.create(req.body);
-  
-      req.session.save(() => {
-        req.session.user_id = userData.id;
-        req.session.logged_in = true;
-  
-        res.status(200).json(userData);
-        console.log(userData)
-      });
+      await User.create(req.body);
+      res.status(200).render('login');
     } catch (err) {
       res.status(400).json(err);
     }
   });
 
+  // let the user login after authenticating else send an error
   router.post('/login', async (req, res) => {
     try {
       const userData = await User.findOne({ where: { email: req.body.email } });
