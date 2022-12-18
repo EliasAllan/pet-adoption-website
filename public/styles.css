@@ -31,11 +31,11 @@
 }
 /* Horizontal Navigation Bar */
 .horizontal-nav-bar{
-    padding-top: 15px;
+    padding-top: 25px;
     margin-right: 20px;
     float: right;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     list-style-type: none;
     text-transform: uppercase;
     position: relative;
@@ -57,7 +57,7 @@
 
 .horizontal-nav-bar-second-row a{
     color: black;
-    font-size: 24px;
+    font-size: 15px;
 }
 
 #nav-logo {

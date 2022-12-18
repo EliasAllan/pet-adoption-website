@@ -1,4 +1,4 @@
-<section>
+<section id ="general">
   <div class="d-flex justify-content-center">
 
     <div class="animals"> <img class="mx-auto" src="images/top_img.jpg" class="rounded mx-auto d-block" width="600"
@@ -23,9 +23,32 @@
 
 
   <div class="d-flex justify-content-center boxes">
+    <!--
     <img class="img-responsive" src="images/Nebraska.jpg" width="200" height="200" alt=" Cats clipart">
     <img class="img-responsive" src="images/Taco.jpg" width="200" height="200" alt="Dogs clipart">
     <img class="img-responsive" src="images/Tank.jpg" width="200" height="200" alt="Turtle clipart">
+    -->
+
+    {{#each animals}}
+      <div class="card m-3">
+        <div class="card-header">
+           <img class="img-responsive" src="images/{{this.dataValues.name}}.png" width="200" height="200" alt="image of {{this.dataValues.name}}">
+        </div>
+        <div class="card-body">
+            <h1>{{this.dataValues.name}}</h1>
+            Age: {{this.dataValues.age}}<br />
+            Breed: {{this.dataValues.breed}}
+        </div>
+        <div class="card-footer text-center">
+          <!-- need to create a POST route for cart -->
+          <form method="post" action="cart">
+             <input name="id" id="id" type="hidden" value="{{this.dataValues.id}}" />
+             <input type="submit" value="Add to Cart" class="btn Sign-Button" />
+          </form>
+        </div>
+      </div>
+     
+    {{/each}}
   </div>
 
 

@@ -1,30 +1,25 @@
-<section class="login-form">
+<section>
     <h1 id="Login-Title">LOGIN</h1>
     <div class="row mx-auto">
-        <form class="login-form">
-            <div class="row justify-content-center">
-                <div class="col-sm-4 p-2">
-                    <input id="email-login" type="email" class="form-control" placeholder="Email" aria-label="Email">
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-sm-4 p-2">
-                    <input id="password-login" type="password" class="form-control" placeholder="Password"
-                        aria-label="Password">
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="d-grid col-sm-4">
-                    <button class="btn Sign-Button" type="submit">Sign</button>
-                </div>
-            </div>
-        </form>
         <div class="row justify-content-center">
-            <div class="d-grid col-sm-4 p-2">
-                <p class="Sign-Up-Redirect">Need an account? <a href="/signup"> Sign Up</a></p>
+            <div class="col-sm-4 p-2">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" aria-label="Email">
             </div>
         </div>
-    </div>
+        <div class="row justify-content-center">
+             <div class="col-sm-4 p-2">
+                 <input type="password" class="form-control" id="inputPassword" placeholder="Password" aria-label="Password">
+            </div>  
+        </div>
+         <div class="row justify-content-center">
+             <div class="d-grid col-sm-4">
+                 <button class="btn Sign-Button" id="signInBtn" type="button">Log in</button>
+            </div>  
+        </div>
+          <div class="row justify-content-center">
+             <div class="d-grid col-sm-4 p-2">
+                <p class="Sign-Up-Redirect">Need an account? <a href="/signup"> Sign Up</a></p> 
+            </div>  
+        </div>     
+    </div>   
 </section>
-
-<script src="/js/login.js"></script>
