@@ -97,12 +97,14 @@ color: black;
 
 /*Media Queries*/
  @media screen and (max-width: 600px) {
-   .animals img, .circles img, .banner img {
+   .animals img, .circles img, .circles, .banner img {
     width: 100%;
     height: auto; 
+    flex-direction: column;
    } 
    .mainNavBar, .bottomNavBar{
     flex-direction: column;
    }
   }
+
 
