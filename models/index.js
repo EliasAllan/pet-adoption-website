@@ -1,7 +1,8 @@
 const Animal = require('./Animal');
 const Category = require('./Category');
-const User = require('./User')
-const Cart = require('./Cart')
+const User = require('./User');
+const Cart = require('./Cart');
+const AnimalCart = require('./AnimalCart');
 
 Category.hasMany(Animal, {
   foreignKey: 'category_id',
@@ -13,13 +14,16 @@ Animal.belongsTo(Category, {
 });
 
 // work in progress below, subject to change
-Cart.hasMany(Animal, {
-  foreignKey: 'animal_id',
-  onDelete: 'CASCADE'
+Cart.belongsToMany(Animal, {
+  through: {
+    model: AnimalCart
+  }
 });
 
-Animal.belongsTo(Cart, {
-  foreignKey: 'animal_id'
+Animal.belongsToMany(Cart, {
+  through: {
+    model: AnimalCart
+  }
 });
 // work in progress above, subject to change
-module.exports = { Animal, Category, User , Cart};
+module.exports = { Animal, AnimalCart, Category, User , Cart};
