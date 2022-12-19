@@ -22,7 +22,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/signup", (req, res) => {
+ router.get("/signup", (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect("/");
@@ -32,4 +32,4 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-module.exports = router;
+  module.exports = router;

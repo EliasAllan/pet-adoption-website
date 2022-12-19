@@ -1,13 +1,13 @@
 [
     {
-        "name": "Fifi",
-        "breed": "Turkish Angora",
+        "name": "Nebraska",
+        "breed": "British Shorthair",
         "age": 3,
         "category_id": 1
     },
     {
-        "name": "Cookie",
-        "breed": "German Shepherd",
+        "name": "Taco",
+        "breed": "Chihuahua",
         "age": 4,
         "category_id": 2
     },
