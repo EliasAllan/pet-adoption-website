@@ -9,7 +9,11 @@ router.get("/", async (req, res) => {
   // console.log(res)
   let animals = await Animal.findAll();
   console.log(animals);
-  res.render("homepage", { animals: animals });
+  res.render("homepage", { 
+    animals: animals,
+    logged_in: req.session.logged_in 
+  });
+  
 });
 
 router.get("/login", (req, res) => {
