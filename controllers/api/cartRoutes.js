@@ -3,7 +3,7 @@ const { Animal } = require("../../models");
 const withApiAuth = require("../../utils/apiAuth");
 
 // create cart item by adding a record in user table
-router.post("/", withApiAuth, async (req, res) => {
+router.post("/basket", withApiAuth, async (req, res) => {
   try {
     const newAnimal = await Animal.findByPk({
       ...req.body,
