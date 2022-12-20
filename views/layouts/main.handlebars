@@ -14,7 +14,12 @@
 <body>
   <header class="display-flex justify-space-between align-center p-2">
     
-    <div id="nav-logo">
+    
+
+<!--Top navigation -->
+    <nav class="horizontal-nav-bar navbar-expand mainNavBar">
+        <div class="container-md display-flex flex-wrap">
+          <div id="nav-logo">
 <!-- Making the logo clickable so user can return to Homepage when clicking on it -->  
       <a class="nav-link" href="/">
       <a class="nav-link" href="/">
@@ -22,28 +27,27 @@
     </a>
       </a>
     </div>
-
-<!--Top navigation -->
-    <nav class="horizontal-nav-bar navbar-expand mainNavBar">
-        <div class="container-md">
           <ul class="nav justify-content-end">
             <li class="hover-underline-animation">
             <!-- check if class=nav-link is being used somewhere -->
               <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
             </li>
 
-        <li>
+        <li class="hover-underline-animation">
           {{#if logged_in}}
           <a class="nav-link" id="logout" >Logout</a>
         </li>
-        <li>
+        <li class="hover-underline-animation">
           {{else}}
           <a class="nav-link" href="/login">Login</a>
         </li>
-        <li>
+        <li class="hover-underline-animation">
           <a class="nav-link" href="/signup">Signup</a>
           {{/if}}
         </li>
+         <li class="hover-underline-animation">
+            <a class="nav-link" href="/basket" id="cart"><i class="fa fa-shopping-basket"></i> Basket</a>
+          </li>
         
       </ul>
       </div>
