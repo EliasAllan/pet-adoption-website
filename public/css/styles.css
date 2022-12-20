@@ -1,5 +1,3 @@
-
-/*General Reset*/
 *{
     margin:0;
     padding:0;
@@ -16,9 +14,8 @@
 
 /*Classes*/
 
-/* Horizontal Navigation Bar */
-.horizontal-nav-bar{
-    padding-top: 30px;
+.horizontal-nav-bar {
+    padding-top: 25px;
     margin-right: 20px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
@@ -30,31 +27,40 @@
     position: relative;
 }
 
-.horizontal-nav-bar li{
+.horizontal-nav-bar li {
     display: inline-block;
     margin-left: 25px;
    
 }
 
-.horizontal-nav-bar a{
+.horizontal-nav-bar a {
     color: black;
 }
 
+.horizontal-nav-bar a:hover,
+.horizontal-nav-bar-second-row a:hover {
+    color: purple;
+}
 
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: purple;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
 
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
 
-
-
-
-/*Dynamic navigation*/
-.hover-underline-animation {
-    display: inline-block;
-    position: relative;
-    color:purple;
-  }
-  
-
-.horizontal-nav-bar a{
+.horizontal-nav-bar-second-row a {
     color: black;
 }
 .horizontal-nav-bar a:hover{
@@ -87,13 +93,28 @@
     cursor: pointer;
 }
 
-.circles  {
+.circles {
     margin-top: -2%;
     max-width: 100%;
 }
 
+.boxes img {
 
-#Sign-Up-Title, #Login-Title, #homePage-Subtitle, #shoppingBasket-Title{
+    margin-right: 10%;
+}
+
+.boxes {
+
+    margin-bottom: 10%;
+}
+
+
+/*Sign Up*/
+/*Login*/
+#Sign-Up-Title,
+#Login-Title,
+#homePage-Subtitle,
+#shoppingBasket-Title {
     color: purple;
     text-align: center;
     padding-top: 24px;
@@ -105,36 +126,41 @@
     margin-top: 24px;
     text-align: center;
 }
-.Sign-Up-Redirect a{
+
+.Sign-Up-Redirect a {
     color: black;
     text-align: center;
 }
 
-.SignUp-Button ,
-.Sign-Button, .checkout-Button {
+.SignUp-Button,
+.Sign-Button,
+.checkout-Button {
     background-color: purple;
     color: white;
     margin-top: 24px;
     padding-top: 12px;
 }
 
-.SignUp-Button:hover{
-background-color: light purple;
-color: black;
+.SignUp-Button:hover {
+    background-color: light purple;
+    color: black;
 }
 
 
 /*Media Queries*/
- @media screen and (max-width: 600px) {
-   .animals img, .circles img, .circles, .banner img {
-    width: 100%;
-    height: auto; 
-    flex-direction: column;
-   } 
+@media screen and (max-width: 600px) {
 
-   .mainNavBar {
-    flex-direction: column;
-   }
-  }
+    .animals img,
+    .circles img,
+    .circles,
+    .banner img {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
 
-
+    .mainNavBar,
+    .bottomNavBar {
+        flex-direction: column;
+    }
+}
