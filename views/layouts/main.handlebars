@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,44 +12,45 @@
 
 <body>
   <header class="display-flex justify-space-between align-center p-2">
+    
     <div id="nav-logo">
+<!-- Making the logo clickable so user can return to Homepage when clicking on it -->  
+      <a class="nav-link" href="/">
       <img src="/images/shelter_logo.jpg" class="banner" width="299" height="100" alt="Animal Shelter Banner" />
+    </a>
     </div>
 
+<!--Top navigation -->
     <nav class="horizontal-nav-bar navbar-expand mainNavBar">
-    <div class="container-md">
-      <ul class="nav justify-content-end">
-        <li>
-          <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
-        </li>
+      <div class="container-md">
+        <ul class="nav justify-content-end">
+          <li class="hover-underline-animation">
+            <!-- check if class=nav-link is being used somewhere -->
+            <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+          </li>
 
-        <li>
-          {{#if logged_in}}
-          <a class="nav-link" id="logout" >Logout</a>
-        </li>
-        <li>
-          {{else}}
-          <a class="nav-link" href="/login">Login</a>
-        </li>
-        <li>
-          <a class="nav-link" href="/signup">Signup</a>
-          {{/if}}
-        </li>
-      </ul>
+          <li class="hover-underline-animation">
+            {{#if logged_in}}
+            <a class="nav-link" id="logout">Logout</a>
+          </li>
+          <li class="hover-underline-animation">
+            {{else}}
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="hover-underline-animation">
+            <a class="nav-link" href="/signup">Signup</a>
+            {{/if}}
+          </li>
+        </ul>
       </div>
     </nav>
-
     <div style="height: 1px;0px;border-top:15px solid #EBD4FC"></div>
-
-    
-
   </header>
-
+  <!--  Main container with the Body-->
   <main>
     {{{body}}}
   </main>
-<script src="/js/logout.js"></script>
-
+  <script src="/js/logout.js"></script>
 </body>
 
 </html>
