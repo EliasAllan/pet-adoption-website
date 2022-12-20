@@ -4,7 +4,7 @@ const { Animal, Category } = require('../models');
 const categoryData = require('./categoryData.json');
 const animalData = require('./animalData.json');
 
-const seedDatabase = async () => {
+const seedDatabase = async (cb) => {
     await sequelize.sync({force: true});
 
     const category = await Category.bulkCreate(categoryData, {
@@ -19,6 +19,8 @@ const seedDatabase = async () => {
     });
 
     process.exit(0);
+    cb();
 };
 
-seedDatabase();
+// seedDatabase();
+module.exports = seedDatabase;
