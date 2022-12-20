@@ -82,7 +82,7 @@
 }
 
 .SignUp-Button ,
-.Sign-Button {
+.Sign-Button, .checkout-Button {
     background-color: purple;
     color: white;
     margin-top: 24px;
