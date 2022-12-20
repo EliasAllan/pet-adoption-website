@@ -64,7 +64,7 @@
 
 /*Sign Up*/
 /*Login*/
-#Sign-Up-Title, #Login-Title, #homePage-Subtitle{
+#Sign-Up-Title, #Login-Title, #homePage-Subtitle, #shoppingBasket-Title{
     color: purple;
     text-align: center;
     padding-top: 24px;
@@ -82,7 +82,7 @@
 }
 
 .SignUp-Button ,
-.Sign-Button {
+.Sign-Button, .checkout-Button {
     background-color: purple;
     color: white;
     margin-top: 24px;
