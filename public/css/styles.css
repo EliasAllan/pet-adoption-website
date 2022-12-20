@@ -1,49 +1,89 @@
+
+/*General Reset*/
 *{
     margin:0;
     padding:0;
 }
+ /* Ids*/
+
+ #nav-logo {
+    display: inline-block;
+    padding: 5px;
+    width: 150px;
+    cursor: pointer;
+}
+
+/*Classes*/
 
 /* Horizontal Navigation Bar */
 .horizontal-nav-bar{
-    padding-top: 25px;
+    padding-top: 30px;
     margin-right: 20px;
-    float: right;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
     list-style-type: none;
-    text-transform: uppercase;
+    
+
+    /*Check positioning*/
+    float: right;
     position: relative;
 }
 
 .horizontal-nav-bar li{
     display: inline-block;
     margin-left: 25px;
-    color: purple;
+   
 }
 
 .horizontal-nav-bar a{
     color: black;
 }
 
-.horizontal-nav-bar a:hover, .horizontal-nav-bar-second-row a:hover{
-    color: purple;
-    }
 
-.horizontal-nav-bar-second-row a{
-    color: black;
-    font-size: 15px;
-}
 
-#nav-logo {
+
+
+
+
+/*Dynamic navigation*/
+.hover-underline-animation {
     display: inline-block;
-    padding: 5px;
-    width: 150px;
-}
+    position: relative;
+    color:purple;
+  }
+  
 
+.horizontal-nav-bar a{
+    color: black;
+}
+.horizontal-nav-bar a:hover{
+    color: purple;
+}
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:purple;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+
+/*Circle Navigation*/
 
 .circles img {
     margin-right: 10%;
     max-width: 100%;
+    cursor: pointer;
 }
 
 .circles  {
@@ -51,19 +91,7 @@
     max-width: 100%;
 }
 
-.boxes img {
 
-    margin-right: 10%;
-}
-
-.boxes {
-
-    margin-bottom:10%;
-}
-
-
-/*Sign Up*/
-/*Login*/
 #Sign-Up-Title, #Login-Title, #homePage-Subtitle{
     color: purple;
     text-align: center;
@@ -102,7 +130,8 @@ color: black;
     height: auto; 
     flex-direction: column;
    } 
-   .mainNavBar, .bottomNavBar{
+
+   .mainNavBar {
     flex-direction: column;
    }
   }
