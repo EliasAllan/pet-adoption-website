@@ -1,0 +1,1 @@
+// working on creating a fetch request method to send animal data to be added in the card table
