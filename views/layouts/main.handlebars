@@ -23,31 +23,34 @@
     <nav class="horizontal-nav-bar navbar-expand mainNavBar">
       <div class="container-md">
         <ul class="nav justify-content-end">
-          <li>
+          <li class="hover-underline-animation">
+            <!-- check if class=nav-link is being used somewhere -->
             <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
           </li>
 
-          <li>
+          <li class="hover-underline-animation">
             {{#if logged_in}}
-            <a class="nav-link" id="logout" href="">Logout</a>
+            <a class="nav-link" id="logout">Logout</a>
           </li>
-          <li>
+          <li class="hover-underline-animation">
             {{else}}
             <a class="nav-link" href="/login">Login</a>
           </li>
-          <li>
+          <li class="hover-underline-animation">
             <a class="nav-link" href="/signup">Signup</a>
             {{/if}}
           </li>
-          <li>
+          <li class="hover-underline-animation">
             <a class="nav-link" href="/basket" id="cart"><i class="fa fa-shopping-basket"></i> Basket</a>
           </li>
+
         </ul>
       </div>
     </nav>
-
-    <div style="height: 1px;0px;border-top:15px solid #EBD4FC"></div>
-
+<div>
+   <div style="height: 1px;0px;border-top:15px solid #EBD4FC"></div>
+</div>
+   
 
 
   </header>
