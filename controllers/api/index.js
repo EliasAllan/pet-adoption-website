@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const seedDatabase = require('../../seeds/seed');
 const userRoutes = require('./userRoutes');
 
 router.use('/users', userRoutes);
