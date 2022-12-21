@@ -1,7 +1,7 @@
-const Animal = require('./Animal');
-const Category = require('./Category');
-const User = require('./User');
 const Cart = require('./Cart');
+const User = require('./User');
+const Category = require('./Category');
+const Animal = require('./Animal');
 // const AnimalCart = require('./AnimalCart');
 
 User.hasOne(Cart, {
@@ -26,4 +26,4 @@ Animal.belongsTo(Category, {
 
 
 // work in progress above, subject to change
-module.exports = { Animal, Category, User , Cart};
+module.exports = {  Cart , User , Category, Animal };

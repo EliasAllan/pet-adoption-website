@@ -33,9 +33,9 @@ const seedDatabase = async (cb) => {
         returning: true,
     });
 
-    process.exit(0);
-    // cb();
+    // process.exit(0);
+    cb();
 };
 
-seedDatabase();
+// seedDatabase();
 module.exports = seedDatabase;
