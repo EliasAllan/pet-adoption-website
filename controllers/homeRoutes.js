@@ -2,6 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 const router = require("express").Router();
 const path = require("path");
 const { Animal, Category, Cart, User } = require("../models");
+const withAuth = require('../utils/auth');
 
 // Get homepage
 router.get("/", async (req, res) => {
@@ -35,31 +36,29 @@ router.get("/login", (req, res) => {
   res.render("signup");
 });
 
-router.get("/basket", async (req, res) => {
+router.get("/basket", withAuth, async (req, res) => {
   try {
   // Get all projects and JOIN with user data
-  const cartData = await Cart.findAll({
-    include:[
-      // {
-      //   model:Animal,
-      //   attributes:['name','breed','age'],
-      // },
-    ],
+  const cartData = await Cart.findByPk(req.session.user_id,{
+    attributes: { exclude: ['password'] },
+    include: [{ model: Animal }],
   });
  // Serialize data so the template can read it
-  const carts = cartData.map((cart) => cart.get({ plain: true }));
-  
+  // const carts = cartData.map((cart) => cart.get({ plain: true }));
+  const cart = cartData.get({ plain: true });
   // making the data readable
-  console.log(JSON.stringify(
-    {
-      carts, 
-      logged_in: req.session.logged_in 
-    }, 
-    null, 2));
+  // console.log(JSON.stringify(
+  //   {
+  //     carts, 
+  //     logged_in: req.session.logged_in 
+  //   }, 
+  //   null, 2));
+console.log(cart)
+// console.log(cartData)
   // If the user is already logged in, redirect the request to another route
   res.render('shoppingBasket', { 
-    carts, 
-    logged_in: req.session.logged_in 
+    ...cart, 
+    logged_in: true
   });
 } catch (err) {
   res.status(500).json(err);
