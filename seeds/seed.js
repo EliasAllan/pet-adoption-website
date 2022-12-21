@@ -1,11 +1,26 @@
 const sequelize = require('../config/connection');
-const { Animal, Category } = require('../models');
+const {User, Cart , Category , Animal  } = require('../models');
 
+const userData = require('./userData.json');
 const categoryData = require('./categoryData.json');
 const animalData = require('./animalData.json');
+const cartData = require('./cartData.json');
 
 const seedDatabase = async (cb) => {
     await sequelize.sync({force: true});
+
+    const users = await User.bulkCreate(userData, {
+        individualHooks: true,
+        returning: true,
+      });
+
+      for (const cart of cartData) {
+        await Cart.create({
+          ...cart,
+          user_id: users[Math.floor(Math.random() * users.length)].id,
+        });
+      }
+    
 
     const category = await Category.bulkCreate(categoryData, {
         individualHooks: true,
@@ -18,9 +33,9 @@ const seedDatabase = async (cb) => {
         returning: true,
     });
 
-    // process.exit(0);
-    cb();
+    process.exit(0);
+    // cb();
 };
 
-// seedDatabase();
+seedDatabase();
 module.exports = seedDatabase;
