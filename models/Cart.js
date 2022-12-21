@@ -11,9 +11,12 @@ Cart.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        quantity: {
+        animal_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            references: {
+                model: 'animal',
+                key: 'id'
+            }
         },
         user_id: {
             type: DataTypes.INTEGER,
