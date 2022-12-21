@@ -1,21 +1,30 @@
+const { Model, DataTypes } = require("sequelize");
 const router = require("express").Router();
-const { Animal } = require("../../models");
+const { Animal, Cart } = require("../../models");
 const withApiAuth = require("../../utils/apiAuth");
-
-// create cart item by adding a record in user table
-router.post("/", withApiAuth, async (req, res) => {
+// api/users/basket
+// Use withAuth middleware to prevent access to route
+router.post("/basket", withApiAuth, async (req, res) => {
   try {
-    const newAnimal = await Animal.findByPk({
+    // Find the logged in user based on the session ID
+    const cartData = await Cart.create({
       ...req.body,
       user_id: req.session.user_id,
+      include: [{ model: Animal }],
     });
 
-    res.status(200).json(newAnimal);
+    // const user = userData.get({ plain: true });
+
+    // res.render("shoppingBasket", {
+    //   ...user,
+    //   logged_in: true,
+    // });
+    res.status(200).json(cartData);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.get("/test", (req,res) => res.send("success"))
+router.get("/test", (req, res) => res.send("success"));
 
 module.exports = router;

@@ -8,6 +8,16 @@ const cartData = require('./cartData.json');
 
 const seedDatabase = async (cb) => {
     await sequelize.sync({force: true});
+    
+    const category = await Category.bulkCreate(categoryData, {
+        individualHooks: true,
+        returning: true,
+    });
+    
+    const animal = await Animal.bulkCreate(animalData, {
+        individualHooks: true,
+        returning: true,
+    });
 
     const users = await User.bulkCreate(userData, {
         individualHooks: true,
@@ -22,16 +32,8 @@ const seedDatabase = async (cb) => {
       }
     
 
-    const category = await Category.bulkCreate(categoryData, {
-        individualHooks: true,
-        returning: true,
-    });
 
 
-    const animal = await Animal.bulkCreate(animalData, {
-        individualHooks: true,
-        returning: true,
-    });
 
     // process.exit(0);
     cb();
