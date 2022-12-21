@@ -4,7 +4,7 @@ const userRoutes = require('./userRoutes');
 const cartRoutes = require('./cartRoutes');
 
 router.use('/users', userRoutes);
-router.use('/users', cartRoutes);
+router.use('/cart', cartRoutes);
 
 router.post('/seedDatabase', (req, res) => {
     seedDatabase(function(){
