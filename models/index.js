@@ -22,6 +22,9 @@ Animal.belongsTo(Category, {
   foreignKey: 'category_id'
 });
 
+Cart.belongsTo(Animal, {
+  foreignKey: 'animal_id'
+})
 // work in progress below, subject to change
 
 
