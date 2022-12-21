@@ -2,7 +2,7 @@
     <h1 id="shoppingBasket-Title">MY BASKET</h1>
 
     <div class="container">
-        {{#if cart}}
+        {{#each cart}}
         <div class="d-grid col">
             <div class="card m-3">
                 <div class="card-header">
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        {{/if}}
+        {{/each}}
     </div>
 </section>
 
