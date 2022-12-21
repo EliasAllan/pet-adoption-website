@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const router = require("express").Router();
 const path = require("path");
-const { Animal, Category } = require("../models");
+const { Animal, Category, Cart, User } = require("../models");
 
 // Get homepage
 router.get("/", async (req, res) => {
@@ -35,9 +35,35 @@ router.get("/login", (req, res) => {
   res.render("signup");
 });
 
-router.get("/basket", (req, res) => {
+router.get("/basket", async (req, res) => {
+  try {
+  // Get all projects and JOIN with user data
+  const cartData = await Cart.findAll({
+    include:[
+      // {
+      //   model:Animal,
+      //   attributes:['name','breed','age'],
+      // },
+    ],
+  });
+ // Serialize data so the template can read it
+  const carts = cartData.map((cart) => cart.get({ plain: true }));
+  
+  // making the data readable
+  console.log(JSON.stringify(
+    {
+      carts, 
+      logged_in: req.session.logged_in 
+    }, 
+    null, 2));
   // If the user is already logged in, redirect the request to another route
-  res.render("shoppingBasket");
+  res.render('shoppingBasket', { 
+    carts, 
+    logged_in: req.session.logged_in 
+  });
+} catch (err) {
+  res.status(500).json(err);
+}
 });
 
   module.exports = router;

@@ -19,13 +19,6 @@ AnimalCart.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        animal_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'animal',
-                key: 'id',
-            }
-        },
         cart_id: {
             type: DataTypes.INTEGER,
             references: {
