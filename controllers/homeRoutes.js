@@ -55,7 +55,6 @@ router.get("/basket", withAuth, async (req, res) => {
   //   null, 2));
 console.log(cart)
 // console.log(cartData)
-  // If the user is already logged in, redirect the request to another route
   res.render('shoppingBasket', { 
     ...cart, 
     logged_in: true
