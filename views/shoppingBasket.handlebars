@@ -2,18 +2,18 @@
     <h1 id="shoppingBasket-Title">MY BASKET</h1>
 
     <div class="container">
-        {{#each cart}}
+        {{#each carts as |cart|}}
+        {{#each cart.animals as |animal|}}
         <div class="d-grid col">
             <div class="card m-3">
                 <div class="card-header">
-                    <img class="img-responsive" src="images/{{this.dataValues.name}}.png" width="200" height="200"
-                        alt="image of {{this.dataValues.name}}">
+                    <img class="img-responsive" src="images/{{animal.name}}.png" width="200" height="200"
+                        alt="image of {{animal.name}}">
                 </div>
                 <div class="card-body">
-                    <h1>{{this.dataValues.name}}</h1>
-                    Age: {{this.dataValues.age}}<br />
-                    Breed: {{this.dataValues.breed}}<br />
-                    Quantity: {{this.dataValues.quantity}}
+                    <h1>{{animal.name}}</h1>
+                    Age: {{animal.age}}<br />
+                    Breed: {{animal.breed}}<br />
                 </div>
 
                 <div class="row align-items-start">
@@ -40,6 +40,7 @@
                 </div>
             </div>
         </div>
+        {{/each}}
         {{/each}}
     </div>
 </section>

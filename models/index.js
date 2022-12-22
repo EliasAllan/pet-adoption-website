@@ -22,9 +22,13 @@ Animal.belongsTo(Category, {
   foreignKey: 'category_id'
 });
 
-Cart.belongsTo(Animal, {
-  foreignKey: 'animal_id'
-})
+Cart.hasMany(Animal, {
+  foreignKey: 'cart_id'
+});
+
+Animal.belongsTo(Cart, {
+  foreignKey: 'cart_id'
+});
 // work in progress below, subject to change
 
 

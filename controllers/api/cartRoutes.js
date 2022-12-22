@@ -13,15 +13,13 @@ router.post("/basket", withApiAuth, async (req, res) => {
     let cartData;
     if(savedCartId === 0){
        cartData = await Cart.create({
-        animal_id:animalId,
         user_id: userId,
       });
       cartData = cartData.get({plain:true})
       savedCartId = cartData.id
+      await Animal.update({where: {id: animalId}}, {cart_id: savedCartId});
     }else{
-      const result = await Cart.update({
-        where:{id:savedCartId}
-      },{animal_id:animalId});
+      const result = await Animal.update({where: {id: animalId}}, {cart_id: savedCartId});
       cartData = await Cart.findAll({
         where:{id:savedCartId}
       });
