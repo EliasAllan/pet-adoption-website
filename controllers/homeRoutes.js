@@ -23,7 +23,6 @@ router.get("/adopt", async (req, res) => {
   // console.log(res)
   
   res.render("adopt", { 
-    
   });
   
 });
