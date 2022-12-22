@@ -1,6 +1,6 @@
 # pet-adoption-website
 
-## Your Task
+## Description
 As a full-stack web developer, create a pet-adoption website by making and connecting the dynamic and responsive front-end using HTML, CSS (Bootstrap) and JavaScript, to the responsive and interactive back-end using Handlebars.js (as the template engine), MySQL and the Sequelize ORM (for the database), GET and POST routes (for adding new data and retrieving), which has (cookies and express session) authentication, then deploy it using Heroku.
 
 
@@ -8,10 +8,20 @@ As a full-stack web developer, create a pet-adoption website by making and conne
 
 ```md
 AS A full-stack web developer
-My goal is to generate a webpage that displays a pet-adoption online shop.
+The goal is to generate a webpage that displays a pet-adoption online shop.
 SO THAT users can easily see different pets with their information, choose their favorite one and by adding the pet to the cart and paying the adoption fee, they adopt it
 ```
 
+
+## Installation
+
+```md
+Run mysql -u root -p < db/schema.sql
+Run npm i in Terminal
+Rename .env.EXAMPLE to .env and fill in the blank spaces
+Run the seed file with nmp run seed command in the terminal
+
+```
 ## Acceptance Criteria
 
 ```md
@@ -19,11 +29,11 @@ SO THAT users can easily see different pets with their information, choose their
 GIVEN a command-line application which displays Homepage, Navigation Bar with different functional and responsive buttons for Home, Login, Signup, And different Animal Kind (Dog, Cat, Turtle)
 GIVEN a command-line application that displays Pet's Cards and their picture and information 
 
-THEN in Pets' card, where pet's Picture, Name, Age and Breed are displayed, user should be able to see the Add to Cart button
+THEN in Pets' card, where pet's Picture, Name, Age and Breed are displayed, user should be able to see the Add to Basket button
 
-WHEN the User clicks on the Add to Cart button, it takes the User to Cart page for payment
+WHEN the User clicks on the Add to Basket button, it takes the User to the Payment page 
 
-GIVEN a command-line application which accepts users input to be able login or signup in cart page in order to pay and finish the adoption process
+GIVEN a command-line application which accepts users input to be able to login or signup in cart page in order to pay and finish the adoption process
 
 WHEN the User clicks to finish the shopping process, User requires to login by entering the Email and password
 
@@ -52,6 +62,13 @@ The following images show the mock-up of the generated HTML’s appearance and f
 
 
 ![ The demo Video of Pet-adoption website and its functionality]()
+
+## Developers
+Allen  Elias         https://github.com/EliasAllan          
+Angelica barra       https://github.com/4ng3lic4?tab=repositories
+Fatemeh Niaziorimi   https://github.com/FatemehNiaz
+Nayonne Purnell
+Saad Anwar
 
 
 ## License 
