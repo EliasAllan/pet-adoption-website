@@ -13,23 +13,25 @@ const seedDatabase = async (cb) => {
         individualHooks: true,
         returning: true,
     });
+
+    const users = await User.bulkCreate(userData, {
+      individualHooks: true,
+      returning: true,
+    });
+
+    for (const cart of cartData) {
+      await Cart.create({
+        ...cart,
+        user_id: users[Math.floor(Math.random() * users.length)].id,
+      });
+    }
     
     const animal = await Animal.bulkCreate(animalData, {
         individualHooks: true,
         returning: true,
     });
 
-    const users = await User.bulkCreate(userData, {
-        individualHooks: true,
-        returning: true,
-      });
-
-      for (const cart of cartData) {
-        await Cart.create({
-          ...cart,
-          user_id: users[Math.floor(Math.random() * users.length)].id,
-        });
-      }
+    
     
 
 

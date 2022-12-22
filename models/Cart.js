@@ -11,13 +11,6 @@ Cart.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        animal_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'animal',
-                key: 'id'
-            }
-        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

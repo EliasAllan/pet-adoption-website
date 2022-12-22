@@ -28,6 +28,15 @@ Animal.init(
             references: {
                 model: 'category',
                 key: 'id'
+            },
+        },
+        
+        cart_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'cart',
+                key: 'id',
             }
         }
     },
