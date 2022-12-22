@@ -1,8 +1,17 @@
-const Animal = require('./Animal');
-const Category = require('./Category');
-const User = require('./User');
 const Cart = require('./Cart');
-const AnimalCart = require('./AnimalCart');
+const User = require('./User');
+const Category = require('./Category');
+const Animal = require('./Animal');
+// const AnimalCart = require('./AnimalCart');
+
+User.hasOne(Cart, {
+  foreignKey:'user_id',
+  onDelete: 'CASCADE'
+});
+
+Cart.belongsTo(User, {
+  foreignKey: 'user_id'
+});
 
 Category.hasMany(Animal, {
   foreignKey: 'category_id',
@@ -13,17 +22,15 @@ Animal.belongsTo(Category, {
   foreignKey: 'category_id'
 });
 
-// work in progress below, subject to change
-Cart.belongsToMany(Animal, {
-  through: {
-    model: AnimalCart
-  }
+Cart.hasMany(Animal, {
+  foreignKey: 'cart_id'
 });
 
-Animal.belongsToMany(Cart, {
-  through: {
-    model: AnimalCart
-  }
+Animal.belongsTo(Cart, {
+  foreignKey: 'cart_id'
 });
+// work in progress below, subject to change
+
+
 // work in progress above, subject to change
-module.exports = { Animal, AnimalCart, Category, User , Cart};
+module.exports = {  Cart , User , Category, Animal };

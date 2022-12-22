@@ -11,10 +11,6 @@ Cart.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        quantity: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {

@@ -3,7 +3,8 @@
         "name": "Nebraska",
         "breed": "British Shorthair",
         "age": 3,
-        "category_id": 1
+        "category_id": 1,
+        "cart_id": 1
     },
     {
         "name": "Taco",
