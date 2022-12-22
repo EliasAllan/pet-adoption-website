@@ -17,6 +17,16 @@ router.get("/", async (req, res) => {
   
 });
 
+router.get("/adopt", async (req, res) => {
+  // console.log(req)
+  // console.log(res)
+  
+  res.render("adopt", { 
+    
+  });
+  
+});
+
 router.get('/basket', async (req, res) => {
   try {
     console.log(req.session.cart_id)
