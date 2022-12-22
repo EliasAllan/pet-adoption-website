@@ -1,76 +1,74 @@
-# pet-adoption-website
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Description
-As a full-stack web developer, create a pet-adoption website by making and connecting the dynamic and responsive front-end using HTML, CSS (Bootstrap) and JavaScript, to the responsive and interactive back-end using Handlebars.js (as the template engine), MySQL and the Sequelize ORM (for the database), GET and POST routes (for adding new data and retrieving), which has (cookies and express session) authentication, then deploy it using Heroku.
+https://opensource.org/licenses/MIT
 
+# Pet Adoption Website
 
-## User Story
+## Description 
+This is a e-commerce website created to help pets in need to find a forever home. It was designed with ease of access so that users can easily see different pets and their information and choose their favorite.
 
-```md
-AS A full-stack web developer
-The goal is to generate a webpage that displays a pet-adoption online shop.
-SO THAT users can easily see different pets with their information, choose their favorite one and by adding the pet to the cart and paying the adoption fee, they adopt it
-```
-
-
-## Installation
-
+## Installation  
 ```md
 Run mysql -u root -p < db/schema.sql
-Run npm i in Terminal
-Rename .env.EXAMPLE to .env and fill in the blank spaces
+Run npm i in Terminal 
+Rename .env.EXAMPLE to .env and fill in the blank spaces 
 Run the seed file with nmp run seed command in the terminal
-
 ```
-## Acceptance Criteria
+## Technologies
+This website was made by connecting the dynamic and responsive front-end using HTML, CSS (Bootstrap) and JavaScript, to the responsive and interactive back-end using Handlebars.js (as the template engine), MySQL and the Sequelize ORM (for the database), GET and POST routes (for adding new data and retrieving), utilizing session authentication. This website is powered by Heroku.
 
-```md
-
-GIVEN a command-line application which displays Homepage, Navigation Bar with different functional and responsive buttons for Home, Login, Signup, And different Animal Kind (Dog, Cat, Turtle)
-GIVEN a command-line application that displays Pet's Cards and their picture and information 
-
-THEN in Pets' card, where pet's Picture, Name, Age and Breed are displayed, user should be able to see the Add to Basket button
-
-WHEN the User clicks on the Add to Basket button, it takes the User to the Payment page 
-
-GIVEN a command-line application which accepts users input to be able to login or signup in cart page in order to pay and finish the adoption process
-
-WHEN the User clicks to finish the shopping process, User requires to login by entering the Email and password
-
-WHEN User enters the Email and password to login, if the acount already exists, User is able to continue the shopping process
-
-WHEN The User enters the username and password, if it doesn't exist, THEN the page takes the User to the signup page
-WHEN taken to signup page, User should be able to enter the First Name, Last Name, Email, Password and Telephone Number in order to signup.
-
-```
-
-## Mock-Up
+## Screenshots 
 
 The following images show the mock-up of the generated HTML’s appearance and functionality:
 
-![ The webpage titled “Pet-Adoption-Website” features Homepage and Navigation bar]()
-
-![ The webpage features animal card information]()
-
-![ The demo picture of the backend directory structure](./public/images/DirectoryPic.png)
+![ The demo picture of homepage](./public/images/homepage.png)
 
 ![ The demo picture of login page](./public/images/Login.png)
 
-![ The demo picture of signup page](./public/images/Singup.png)
+![ The demo picture of signup page](./public/images/Signup.png)
 
-![ The demo picture of shopping cart page]()
+![ The demo picture of shopping cart page](./public/images/basket.png)
+
+## Demo Video
+
+https://drive.google.com/file/d/1CVRPSa0GeJAWadEBC_T2Ddlbbtc8RL6-/view
+
+## Usage  
+Go to signup in the nav bar to create an account, log in with email and password provided, click add to basket to add a rescue to your cart, follow the instructions to finish de adoption process !
+
+## Contributing 
+Contact the developers to participate !
+
+## Tests
+no tests were written for this project
+
+## License
+This application is covered by the MIT license
+
+## Questions
+https://github.com/EliasAllan
+https://github.com/SaadYousafi87
+https://github.com/4ng3lic4
+https://github.com/nayonnapurnell
+https://github.com/FatemehNiaz
+
+or
+
+E-mail me at: allanrnelias@gmail.com
+
+## Table of contents
+- [Description](#description)
+- [Installation](#installation)
+- [Technologies](#technologies)
+- [Screenshots](#screenshots)
+- [Demo Video](#demo-video)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [License](#license)
+- [Questions](#questions)
 
 
-![ The demo Video of Pet-adoption website and its functionality]()
+## Link to deployed application
 
-## Developers
-Allen  Elias         https://github.com/EliasAllan          
-Angelica barra       https://github.com/4ng3lic4?tab=repositories
-Fatemeh Niaziorimi   https://github.com/FatemehNiaz
-Nayonne Purnell
-Saad Anwar
-
-
-## License 
-© 2022 MIT License. All Rights Reserved.
-
+https://pet-adoption-store.herokuapp.com/
