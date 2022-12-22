@@ -22,39 +22,40 @@
 <div class="card-group justify-content-center">
 <div class="d-flex justify-content-center boxes">
     {{#if logged_in}}
-    {{#each animals}}
-    <div class="card m-3">
-      <div class="card-header">
-        <img class="img-responsive" src="images/{{this.dataValues.name}}.png" width="200" height="200"
-          alt="image of {{this.dataValues.name}}">
-      </div>
-      <div class="card-body">
-        <h1>{{this.dataValues.name}}</h1>
-        Age: {{this.dataValues.age}}<br/>
-        Breed: {{this.dataValues.breed}}<br/>
-        Contact number: {{this.dataValues.contact}}
-      </div>
-      <div class="card-footer text-center">
-        <!-- need to create a POST route for cart -->
-        <form method="get" action="basket">
-          <input name="id" id="id" type="hidden" value="{{this.dataValues.id}}" />
-          <input type="submit" value="Add to Basket" class="btn Sign-Button" />
-        </form>
-      </div>
-    </div>
-    {{/each}}
+      {{#each animals as |animal|}}
+        <div class="card m-3">
+          <div class="card-header">
+            <img class="img-responsive" src="images/{{animal.name}}.png" width="200" height="200"
+              alt="image of {{animal.name}}">
+          </div>
+          <div class="card-body">
+            <h1>{{animal.name}}</h1>
+            Age: {{animal.age}}<br />
+            Breed: {{animal.breed}}<br />
+            Contact number: {{animal.contact}}
+          </div>
+          <div class="card-footer text-center">
+            <!-- need to create a POST route for cart -->
+            {{!-- <form method="get" action="/basket"> --}}
+              {{!-- <input name="id" id="id" type="hidden" value="{{this.dataValues.id}}" /> --}}
+              <button data-id="{{animal.id}}" class="btn Sign-Button">Add to basket</button>
+              {{!--
+            </form> --}}
+          </div>
+        </div>
+      {{/each}}
     {{else}}
-    {{#each animals}}
+    {{#each animals as |animal|}}
     <div class="card m-3">
       <div class="card-header">
-        <img class="img-responsive" src="images/{{this.dataValues.name}}.png" width="200" height="200"
-          alt="image of {{this.dataValues.name}}">
+        <img class="img-responsive" src="images/{{animal.name}}.png" width="200" height="200"
+          alt="image of {{animal.name}}">
       </div>
       <div class="card-body">
-        <h1>{{this.dataValues.name}}</h1>
-        Age: {{this.dataValues.age}}<br/>
-        Breed: {{this.dataValues.breed}}<br/>
-        Contact number: {{this.dataValues.contact}}
+        <h1>{{animal.name}}</h1>
+        Age: {{animal.age}}<br/>
+        Breed: {{animal.breed}}<br/>
+        Contact number: {{animal.contact}}
       </div>
     </div>
     {{/each}}
@@ -62,3 +63,4 @@
   </div>
 </div>
 </section>
+<script src="/js/cart.js"></script>
