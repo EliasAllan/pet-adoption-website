@@ -17,10 +17,10 @@ router.get("/", async (req, res) => {
   
 });
 
-router.get('/test', async (req, res) => {
+router.get('/basket', async (req, res) => {
   try {
-    const cart_id = 1;
-    const user_id = 1; 
+    const cart_id = req.session.cart_id;
+    const user_id = req.session.user_id; 
     // Get all projects and JOIN with user data
     const cartData = await Cart.findAll({
       where: {
@@ -77,37 +77,37 @@ router.get("/login", (req, res) => {
   res.render("signup");
 });
 
-router.get("/basket", withAuth, async (req, res) => {
-  try {
-  // Get all projects and JOIN with user data
-  const cartData = await Cart.findByPk(req.session.user_id,{
-    attributes: { exclude: ['password'] },
-    include: [{ model: Animal }],
-  });
- // Serialize data so the template can read it
-  // const carts = cartData.map((cart) => cart.get({ plain: true }));
-  const cart = cartData.get({ plain: true });
+// router.get("/basket", withAuth, async (req, res) => {
+//   try {
+//   // Get all projects and JOIN with user data
+//   const cartData = await Cart.findByPk(req.session.user_id,{
+//     attributes: { exclude: ['password'] },
+//     include: [{ model: Animal }],
+//   });
+//  // Serialize data so the template can read it
+//   // const carts = cartData.map((cart) => cart.get({ plain: true }));
+//   const cart = cartData.get({ plain: true });
 
-  const id = cart.animal_id;
-  const selectedAnimal = await Animal.findByPk(id);
-  const aniData = selectedAnimal.get({plain: true});
-  // making the data readable
-  // console.log(JSON.stringify(
-  //   {
-  //     carts, 
-  //     logged_in: req.session.logged_in 
-  //   }, 
-  //   null, 2));
-console.log(aniData);
-// console.log(cartData)
-  res.render('shoppingBasket', { 
-    ...aniData, 
-    logged_in: true
-  });
-} catch (err) {
-  console.log(err);
-  res.status(500).json(err);
-}
-});
+//   const id = cart.animal_id;
+//   const selectedAnimal = await Animal.findByPk(id);
+//   const aniData = selectedAnimal.get({plain: true});
+//   // making the data readable
+//   // console.log(JSON.stringify(
+//   //   {
+//   //     carts, 
+//   //     logged_in: req.session.logged_in 
+//   //   }, 
+//   //   null, 2));
+// console.log(aniData);
+// // console.log(cartData)
+//   res.render('shoppingBasket', { 
+//     ...aniData, 
+//     logged_in: true
+//   });
+// } catch (err) {
+//   console.log(err);
+//   res.status(500).json(err);
+// }
+// });
 
   module.exports = router;
