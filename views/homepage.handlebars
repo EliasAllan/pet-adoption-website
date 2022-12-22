@@ -20,7 +20,7 @@
   </div>
 
 <div class="card-group justify-content-center">
-  <div class="d-flex justify-content-center boxes">
+<div class="d-flex justify-content-center boxes">
     {{#each animals}}
     <div class="card m-3">
       <div class="card-header">
@@ -33,10 +33,10 @@
         Breed: {{this.dataValues.breed}}
       </div>
       <div class="card-footer text-center">
-        <!-- need to create a POST route for cart, created data-animalId attribute to read animal id -->
+        <!-- need to create a POST route for cart -->
         <form method="get" action="basket">
           <input name="id" id="id" type="hidden" value="{{this.dataValues.id}}" />
-          <input type="submit" data-animalId="{{this.dataValues.id}}" value="Add to Basket" class="btn Sign-Button" />
+          <input type="submit" value="Add to Basket" class="btn Sign-Button" />
         </form>
       </div>
     </div>
@@ -44,4 +44,3 @@
   </div>
 </div>
 </section>
-<script src="/js/cart.js"></script>

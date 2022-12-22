@@ -1,14 +1,12 @@
 const { Model, DataTypes } = require("sequelize");
 const router = require('express').Router();
-const { User, Cart } = require('../../models');
+const { User, Animal, Cart} = require('../../models');
 
 
 // create user by adding a record in user table
 router.post('/signup', async (req, res) => {
     try {
-      const newUser = await User.create(req.body);
-      // creating user and cart to have their own unique id
-      await Cart.create({ user_id: newUser.toJSON().id }, {include: [User]})
+      await User.create(req.body);
       res.status(200).render('login');
     } catch (err) {
       res.status(400).json(err);
@@ -18,8 +16,17 @@ router.post('/signup', async (req, res) => {
   // let the user login after authenticating else send an error
   router.post('/login', async (req, res) => {
     try {
-      const userData = await User.findOne({ where: { email: req.body.email }, include: [Cart]});
-      console.log(userData.toJSON());
+      const userData = await User.findOne({ 
+        where: { 
+          email: req.body.email 
+        },
+        include: [
+          {
+            model:Cart,
+          },
+        ],
+      });
+  
       if (!userData) {
         res
           .status(400)
@@ -37,9 +44,10 @@ router.post('/signup', async (req, res) => {
       }
   
       req.session.save(() => {
+        console.log(userData.cart.id)
         req.session.user_id = userData.id;
         req.session.logged_in = true;
-        req.session.cart_id = userData.toJSON().cart.id; // setting session cart id to cart id unique to the logged in user.
+        req.session.cart_id = userData.cart.id;
         
         res.json({ user: userData, message: 'You are now logged in!' });
       });
