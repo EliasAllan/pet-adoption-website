@@ -23,6 +23,10 @@ Animal.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        contact: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         category_id: {
             type: DataTypes.INTEGER,
             references: {

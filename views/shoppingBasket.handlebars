@@ -14,9 +14,10 @@
                     <h1>{{animal.name}}</h1>
                     Age: {{animal.age}}<br />
                     Breed: {{animal.breed}}<br />
+                    Contact number: {{animal.contact}}
                 </div>
 
-                <div class="row align-items-start">
+                {{!-- <div class="row align-items-start">
                     <div class="d-grid col-sm-2">
                         <button>
                             <i class="fa fa-plus" aria-hidden="true"></i>
@@ -28,7 +29,7 @@
                             <i class="fa fa-minus" aria-hidden="true"></i>
                         </button>
                     </div>
-                </div>
+                </div> --}}
 
 
             </div>
@@ -36,7 +37,7 @@
 
             <div class="row justify-content-center">
                 <div class="d-grid col-sm-4">
-                    <button class="btn checkout-Button" id="checkoutBtn" type="submit">Checkout</button>
+                    <a class="btn checkout-Button" href="/adopt" id="checkoutBtn" type="submit">Adopt</a>
                 </div>
             </div>
         </div>
