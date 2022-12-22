@@ -19,8 +19,11 @@ router.get("/", async (req, res) => {
 
 router.get('/basket', async (req, res) => {
   try {
+    console.log(req.session.cart_id)
+    // console.log(req.session.user_id)
+    // console.log(user_id);
     const cart_id = req.session.cart_id;
-    const user_id = req.session.user_id; 
+    const user_id = req.session.user_id;
     // Get all projects and JOIN with user data
     const cartData = await Cart.findAll({
       where: {
