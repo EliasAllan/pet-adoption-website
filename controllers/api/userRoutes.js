@@ -47,7 +47,7 @@ router.post('/signup', async (req, res) => {
         console.log(userData.id)
         req.session.user_id = userData.id;
         req.session.logged_in = true;
-        req.session.cart_id = userData.id;
+        req.session.cart_id = userData.cart_id;
         
         res.json({ user: userData, message: 'You are now logged in!' });
       });

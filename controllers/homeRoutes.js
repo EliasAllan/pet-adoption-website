@@ -8,10 +8,11 @@ const withAuth = require('../utils/auth');
 router.get("/", async (req, res) => {
   // console.log(req)
   // console.log(res)
-  let animals = await Animal.findAll();
+  let animaldata = await Animal.findAll();
+  const animals = animaldata.map((project) => project.get({plain: true}));
   console.log(animals);
   res.render("homepage", { 
-    animals: animals,
+    animals,
     logged_in: req.session.logged_in 
   });
   

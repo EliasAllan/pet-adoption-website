@@ -34,7 +34,6 @@ Animal.init(
                 key: 'id'
             },
         },
-        
         cart_id: {
             type: DataTypes.INTEGER,
             allowNull: true,
