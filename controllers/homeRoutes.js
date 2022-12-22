@@ -23,6 +23,7 @@ router.get("/adopt", async (req, res) => {
   // console.log(res)
   
   res.render("adopt", { 
+    logged_in: req.session.logged_in 
   });
   
 });
