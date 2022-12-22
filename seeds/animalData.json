@@ -4,18 +4,21 @@
         "breed": "British Shorthair",
         "age": 3,
         "category_id": 1,
+        "contact":"232-323-2223",
         "cart_id": 1
     },
     {
         "name": "Taco",
         "breed": "Chihuahua",
         "age": 4,
+        "contact":"545-454-4455",
         "category_id": 2
     },
     {
         "name": "Tank",
         "breed": "Galapago Tortoise",
         "age": 5,
+        "contact":"646-646-6646",
         "category_id": 3
     }
 ]

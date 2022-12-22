@@ -4,6 +4,10 @@ const { Animal, Cart } = require("../../models");
 const withApiAuth = require("../../utils/apiAuth");
 // api/users/
 // Use withAuth middleware to prevent access to route
+
+
+
+
 router.post("/basket", withApiAuth, async (req, res) => {
   try {
     const animalId = req.body.animal_id;
@@ -11,7 +15,7 @@ router.post("/basket", withApiAuth, async (req, res) => {
     const userId = req.session.user_id;
     console.log({animalId, savedCartId, userId})
     let cartData;
-    if(savedCartId === 0){
+    if(savedCartId){
        cartData = await Cart.create({
         user_id: userId,
       });
@@ -21,7 +25,7 @@ router.post("/basket", withApiAuth, async (req, res) => {
     }else{
       const result = await Animal.update({where: {id: animalId}}, {cart_id: savedCartId});
       cartData = await Cart.findAll({
-        where:{id:savedCartId}
+        where: {id:savedCartId}
       });
       cartData = cartData.get({plain:true})
       savedCartId = cartData.id

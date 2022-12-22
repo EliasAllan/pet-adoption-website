@@ -21,6 +21,7 @@
 
 <div class="card-group justify-content-center">
 <div class="d-flex justify-content-center boxes">
+    {{#if logged_in}}
     {{#each animals}}
     <div class="card m-3">
       <div class="card-header">
@@ -29,8 +30,9 @@
       </div>
       <div class="card-body">
         <h1>{{this.dataValues.name}}</h1>
-        Age: {{this.dataValues.age}}<br />
-        Breed: {{this.dataValues.breed}}
+        Age: {{this.dataValues.age}}<br/>
+        Breed: {{this.dataValues.breed}}<br/>
+        Contact number: {{this.dataValues.contact}}
       </div>
       <div class="card-footer text-center">
         <!-- need to create a POST route for cart -->
@@ -41,6 +43,22 @@
       </div>
     </div>
     {{/each}}
+    {{else}}
+    {{#each animals}}
+    <div class="card m-3">
+      <div class="card-header">
+        <img class="img-responsive" src="images/{{this.dataValues.name}}.png" width="200" height="200"
+          alt="image of {{this.dataValues.name}}">
+      </div>
+      <div class="card-body">
+        <h1>{{this.dataValues.name}}</h1>
+        Age: {{this.dataValues.age}}<br/>
+        Breed: {{this.dataValues.breed}}<br/>
+        Contact number: {{this.dataValues.contact}}
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
   </div>
 </div>
 </section>
