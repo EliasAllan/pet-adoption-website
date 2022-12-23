@@ -50,6 +50,7 @@ router.get('/basket', async (req, res) => {
         },
       ],
     });
+    
 
     // Serialize data so the template can read it
     const carts = cartData.map((project) => project.get({ plain: true }));
