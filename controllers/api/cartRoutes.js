@@ -24,10 +24,10 @@ router.post("/basket", withApiAuth, async (req, res) => {
       await Animal.update({cart_id: savedCartId}, {where: {id: animalId}});
     }else{
       const result = await Animal.update({cart_id: savedCartId}, {where: {id: animalId}});
-      cartData = await Cart.findAll({
+      cartData = await Cart.findOne({
         where: {id:savedCartId}
       });
-      cartData = cartData.get({plain:true});
+      // cartData = rawCartData.map(cart => cart.get({plain: true}));
       savedCartId = cartData.id;
     }
 
